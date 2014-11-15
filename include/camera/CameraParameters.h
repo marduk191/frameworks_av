@@ -1,6 +1,3 @@
-+#ifdef HAVE_EXTRA_PARAMETERS
-+#include "BCameraParameters.h"
-+#else
 /*
  * Copyright (C) 2008 The Android Open Source Project
  *
@@ -1137,7 +1134,5 @@ private:
 };
 
 }; // namespace android
-
-#endif
 
 #endif

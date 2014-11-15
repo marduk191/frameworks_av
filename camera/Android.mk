@@ -7,6 +7,7 @@ LOCAL_PATH := $(CAMERA_CLIENT_LOCAL_PATH)
 LOCAL_SRC_FILES:= \
 	Camera.cpp \
 	CameraMetadata.cpp \
+	CameraParameters.cpp \
 	CameraParameters2.cpp \
 	ICamera.cpp \
 	ICameraClient.cpp \
@@ -34,14 +35,6 @@ LOCAL_SHARED_LIBRARIES := \
 
 LOCAL_C_INCLUDES += \
 	system/media/camera/include \
-
-ifneq ($(BOARD_CAMERA_EXTRA_PARAMETERS_PATH),)
- LOCAL_CFLAGS += -DHAVE_EXTRA_PARAMETERS
- LOCAL_C_INCLUDES += $(BOARD_CAMERA_EXTRA_PARAMETERS_PATH)
- LOCAL_SRC_FILES += ../../../$(BOARD_CAMERA_EXTRA_PARAMETERS_PATH)/BCameraParameters.cpp
-else
- LOCAL_SRC_FILES += CameraParameters.cpp
-endif
 
 ifeq ($(BOARD_CAMERA_HAVE_ISO),true)
 	LOCAL_CFLAGS += -DHAVE_ISO
